@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './ContactForm.css';
 
-// API URL from environment variable
-const API_URL = process.env.REACT_APP_API_URL || '';
+// API URL - Use relative path for production, environment variable for development
+const API_URL = process.env.REACT_APP_API_URL || 'https://talk-sapce.vercel.app';
 
 const ContactForm = ({ onContactSubmitted }) => {
   // Form state

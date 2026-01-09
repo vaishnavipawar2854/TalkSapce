@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ContactList.css';
 
-// API URL from environment variable
-const API_URL = process.env.REACT_APP_API_URL || '';
+// API URL - Use relative path for production, environment variable for development
+const API_URL = process.env.REACT_APP_API_URL || 'https://talk-sapce.vercel.app';
 
 const ContactList = () => {
   const [contacts, setContacts] = useState([]);
