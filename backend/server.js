@@ -13,8 +13,14 @@ connectDB();
 // Initialize Express app
 const app = express();
 
-// Middleware
-app.use(cors()); // Enable CORS
+// Middleware - CORS configuration for Vercel deployment
+const corsOptions = {
+  origin: '*', // Allow all origins (or specify your frontend URL)
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+app.use(cors(corsOptions)); // Enable CORS
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
